@@ -56,7 +56,12 @@ if [ "$FILE_COUNT" -ne 1 ]; then
 fi
 
 FILE_NAME=$(echo "$NEW_FILES" | head -n 1)
-COMMIT_MESSAGE="feat($TOPIC): $(basename "$FILE_NAME")"
+
+if [[ "$FILE_NAME" == extras/* ]]; then
+  COMMIT_MESSAGE="feat($TOPIC): $(basename "$FILE_NAME")  [extras]"
+else
+  COMMIT_MESSAGE="feat($TOPIC): $(basename "$FILE_NAME")"
+fi
 
 git add "$FILE_NAME"
 git commit -m "$COMMIT_MESSAGE"
