@@ -53,7 +53,7 @@ build_commit_message() {
   local file_name=$2
 
   if [[ "$file_name" == extras/* ]]; then
-    echo "feat($topic) [extras]: $(basename "$file_name")"
+    echo "feat($topic): $(basename "$file_name") [extras]"
   else
     echo "feat($topic): $(basename "$file_name")"
   fi
