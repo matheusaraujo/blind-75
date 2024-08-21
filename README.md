@@ -1,5 +1,9 @@
-# blind-75
+# blind-75 🤓 💻
 
-- My solutions for `The Blind 75`, a popular list of algorithm practice problems.
-- Based on https://neetcode.io/practice
-- Using https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode
+This repository contains my solutions to the Blind 75 algorithm practice problems, a widely recognized list of coding challenges designed to prepare for technical interviews. The problems cover essential data structures and algorithms that are frequently tested in coding interviews.
+
+### reference
+https://neetcode.io/practice
+
+### tools
+https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode
