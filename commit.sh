@@ -43,7 +43,7 @@ fi
 TOPIC="$1"
 
 if ! is_valid_topic "$TOPIC"; then
-  printf "%sinvalid git topic%s\n" "$RED" "$RESET"
+  printf "%sinvalid topic%s\n" "$RED" "$RESET"
   exit 1
 fi
 
