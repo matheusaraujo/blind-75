@@ -7,9 +7,10 @@
 # @lc code=start
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        res = ""
+        result = ""
 
-        def solve(left, right, res):
+        def solve(left, right):
+            res = ""
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 if right - left + 1 > len(res):
                     res = s[left:right+1]
@@ -17,10 +18,12 @@ class Solution:
             return res
 
         for i in range(len(s)):
-            res = solve(i, i, res) # odd length
-            res = solve(i, i + 1, res) # even length
+            res = solve(i, i) # odd length
+            if len(res) > len(result): result = res
+            res = solve(i, i + 1) # even length
+            if len(res) > len(result): result = res
 
-        return res
+        return result
 
 
 # @lc code=end
