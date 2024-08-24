@@ -13,7 +13,8 @@
 #         self.right = right
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        ans = [root.val]
+        global ans
+        ans = root.val
 
         def dfs(root: Optional[TreeNode]) -> int:
             if not root: return 0
@@ -21,13 +22,14 @@ class Solution:
             leftMax = max(0, dfs(root.left))
             rightMax = max(0, dfs(root.right))
 
-            ans[0] = max(ans[0], root.val + leftMax + rightMax)
+            global ans
+            ans = max(ans, root.val + leftMax + rightMax)
 
             return root.val + max(leftMax, rightMax)
 
         dfs(root)
 
-        return ans[0]
+        return ans
 
 # @lc code=end
 
