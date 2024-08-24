@@ -18,7 +18,7 @@ class Solution:
 
         for i in range(len(s)):
             res = solve(i, i, res) # odd length
-            res = solve(i, i + 1, res) # event length
+            res = solve(i, i + 1, res) # even length
 
         return res
 
