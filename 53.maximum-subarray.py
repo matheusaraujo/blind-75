@@ -7,13 +7,12 @@
 # @lc code=start
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        result = nums[0]
+        result, curr = nums[0], 0
 
-        total = 0
         for n in nums:
-            total += n
-            result = max(result, total)
-            total = max(total, 0)
+            curr = max(curr, 0)
+            curr += n
+            result = max(result, curr)
 
         return result
 
